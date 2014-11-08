@@ -15,3 +15,8 @@ Route::get('/', function()
 {
     return View::make('index.index', array('head_title' => 'SCUT.club'));
 });
+
+App::missing(function($exception)
+{
+    return Response::view('errors.404', array(), 404);
+});
