@@ -11,6 +11,15 @@
 |
 */
 
+
+
+Route::group(array('domain' => '{clubname}.scut.club'), function()
+{
+    Route::get('/', 'SiteController@homePage');
+    Route::get('/{str}', 'SiteController@withPattern');
+
+});
+
 Route::get('/', function()
 {
     return View::make('index.index', array('head_title' => 'SCUT.club'));
